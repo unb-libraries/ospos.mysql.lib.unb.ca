@@ -1,0 +1,18 @@
+dockworker:
+  version: '3.0'
+  application:
+    name: ospos.mysql.lib.unb.ca
+    deployment:
+      repository: dockercloud
+      image:
+        name: unblibraries/ospos.mysql.lib.unb.ca
+      environments:
+        - dev
+        - prod
+    finish_marker: 'mysqld: ready for connections'
+    github:
+      repo: ospos.mysql.lib.unb.ca
+      owner: unb-libraries
+    project_prefix: POS
+    upstream_images:
+      - unblibraries/nginx-php:alpine-php7
