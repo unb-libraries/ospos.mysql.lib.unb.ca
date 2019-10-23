@@ -8,6 +8,7 @@ query_cache_limit=128M
 tmp_table_size=128M
 max_heap_table_size=128M
 
+innodb_use_native_aio = 0
 innodb_buffer_pool_instances=4
 innodb_buffer_pool_size=8G
 innodb_flush_log_at_trx_commit=0
