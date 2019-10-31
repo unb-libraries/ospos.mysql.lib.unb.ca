@@ -18,3 +18,10 @@ script:
   - vendor/bin/dockworker local:build-test
   - vendor/unb-libraries/dockworker/scripts/kubectl/init.sh
   - vendor/bin/dockworker image:deploy $TRAVIS_BRANCH
+
+notifications:
+  slack:
+    rooms:
+      secure: XmEibML3t3DNW+AieKsg9HunYd+BlQX+CVa9NSrerTtxFdGpALAv5KjonRDe+RbpsZMcYmmV/yjRDevbFL/aIdZlO1HYS3B5FkxuQTVqLxq3NWzbIAb2tZryl7g/qHeWYuN1gIWR/5+diLyhyWeH5NpEH194LrVyGdGlFookeN9Gew8k8mL+7O41AZ18wOZKurKb69tUCTq7UICND2RNh2xvsSBHdQJ24CvPy9wyylat2BsMbv0p+Ra/K500G+tNxVyXg4wIipoSUyqFqNc0NIjktvlhmVTG/4H6y7LbwqrF39voLHmZ0Zsyu7ShoCc7PnHidKPPdc55glEDAsYRw7d3g4KJFRQKvut/Ep5Ulp4R/k+Dr0fE48UUe+ttW1pzl1hwgTHhM0e3sumWR6Cz7kQCd5NIiGzJ7XcvT1M1tONBmE5Uz0HsDDUBeQ6AlCJdf44J82+ajalAjDGYr8Y/wtibzKH8Lj4AfPurFwaTsWi5jLZgU240ew6O1XWidfcXt/F1W2fNYb8Gz5YGs7SnrxMXNwMgltNPOWOQINzzwkUdVooU8E6SdoZP/mk4ytlsQ+4pR24qr7aUXFgCp/nnwoHZmPoH8HGZoii4EsFeCACpFlh58LHWoVmuNNMs9NJoj5mmizqS1fBoqpcGgGsq+A/iaUTSUGmEhrnTsq+JliU=
+    on_start: always
+    on_success: always
