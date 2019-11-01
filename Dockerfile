@@ -5,6 +5,10 @@ ENV TZ America/Moncton
 
 COPY ./conf.d /etc/mysql/conf.d
 
+# Metadata
+ARG BUILD_DATE
+ARG VCS_REF
+ARG VERSION
 LABEL ca.unb.lib.generator="mysql" \
       com.microscaling.docker.dockerfile="/Dockerfile" \
       com.microscaling.license="MIT" \
