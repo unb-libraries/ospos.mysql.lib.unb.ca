@@ -6,16 +6,16 @@ metadata:
     appMajor: "5"
     instance: ospos.mysql.lib.unb.ca
     tier: database
-    uri: dev-ospos.mysql.lib.unb.ca
+    uri: ospos.mysql.lib.unb.ca
     vcsOwner: unb-libraries
     vcsRepository: mysql.lib.unb.ca
-    vcsRef: dev
+    vcsRef: prod
   name: ospos-mysql-lib-unb-ca
-  namespace: dev
+  namespace: prod
 spec:
   selector:
     matchLabels:
-      uri: dev-ospos.mysql.lib.unb.ca
+      uri: ospos.mysql.lib.unb.ca
   replicas: 1
   revisionHistoryLimit: 0
   strategy:
@@ -27,13 +27,13 @@ spec:
         appMajor: "5"
         instance: ospos.mysql.lib.unb.ca
         tier: database
-        uri: dev-ospos.mysql.lib.unb.ca
+        uri: ospos.mysql.lib.unb.ca
         vcsOwner: unb-libraries
         vcsRepository: mysql.lib.unb.ca
-        vcsRef: dev
+        vcsRef: prod
     spec:
       nodeSelector:
-        deployenv: dev
+        deployenv: prod
       containers:
         -
           env:
@@ -54,10 +54,10 @@ spec:
             -
               mountPath: /var/lib/mysql
               name: mysql-persistent-storage
-      priorityClassName: dev-high-priority-services
+      priorityClassName: vip-essential
       imagePullSecrets:
         -
-          name: docker-hub-auth
+          name: github-container-registry-auth
       restartPolicy: Always
       volumes:
         -

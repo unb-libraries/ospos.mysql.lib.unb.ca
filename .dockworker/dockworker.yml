@@ -6,6 +6,7 @@ dockworker:
     project_prefix: POS
     upstream_images:
       - mysql:5.7
+    uuid: 3504
   deployment:
     environments:
       - dev
@@ -17,6 +18,6 @@ dockworker:
     push_branches:
       - dev
       - prod
-    name: unblibraries/ospos.mysql.lib.unb.ca
+    name: ghcr.io/unb-libraries/ospos.mysql.lib.unb.ca
     date_tag_image: true
-    repository: dockercloud
+    repository: ghcr
