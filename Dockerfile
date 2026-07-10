@@ -1,6 +1,6 @@
 FROM mysql:5.7
 
-ENV TZ America/Moncton
+ENV TZ="America/Moncton"
 
 COPY ./conf.d /etc/mysql/conf.d
 
